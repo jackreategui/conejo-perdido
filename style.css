@@ -1,0 +1,32 @@
+:root{
+    --black: #000;
+    --white: #fff;
+    --gray: #f7f7f7;
+    --background: #0f0e17;
+    --button: #ff8906;
+    --main: #fffffe;
+    --complementary: #fffffe;
+    --secundary: #f25f4c;
+    --terseary: #e53170;
+    --yellow: #ff8906;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--background);
+}
+
+canvas{
+    border: 4px solid var(--button);
+    border-radius: 8px;
+    background: var(--main);
+}
+
+.buttons{
+    
+}
