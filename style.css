@@ -55,7 +55,13 @@ canvas{
 
 #left, #right{
     display: flex;
+    justify-content: center;
     width: 100%;
+    color: var(--black);
+}
+
+#left:hover, #right:hover, #up:hover, #down:hover{
+    color: var(--white);
 }
 
 .buttons button{
