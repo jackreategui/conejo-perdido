@@ -1,13 +1,14 @@
 const canvas = document.querySelector('#game');
 const game = canvas.getContext('2d');
 
-window.addEventListener('load', startGame);
+let canvasSize;
+let elementsSize;
 
-function startGame(){
-    // game.fillRect(50, 50, 100, 100);
 
-    let canvasSize;
+window.addEventListener('load', setCanvasSize);
+window.addEventListener('resize', setCanvasSize);
 
+function setCanvasSize() {
     if(window.innerHeight > window.innerWidth){
         canvasSize = window.innerWidth * 0.8;
     }else{
@@ -17,8 +18,11 @@ function startGame(){
     canvas.setAttribute('width', canvasSize);
     canvas.setAttribute('height', canvasSize);
 
-    const elementsSize = (canvasSize / 10) - 1;
+    elementsSize = (canvasSize / 10) - 2;
+    startGame();
+}
 
+function startGame(){
     game.font = elementsSize + 'px Helvetica Neue';
     game.textAling = 'end';
 
@@ -26,15 +30,4 @@ function startGame(){
         game.fillText(emojis['X'], elementsSize * i, elementsSize);
     }
 
-
-
-
-
-    // window.innerHeight
-    // window.innerWidth
-
-    // game.font = '14PX Arial';
-    // game.fillStyle = 'black';
-    // game.textAlign = 'left';
-    // game.fillText('Jack reategui', 10, 25)
 }
