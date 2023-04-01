@@ -29,7 +29,7 @@ canvas{
     border: 4px solid var(--button);
     border-radius: 8px;
     background: var(--main);
-    margin-bottom: 30px;
+    margin: 30px auto;
 }
 
 .buttons{
@@ -93,9 +93,16 @@ canvas{
 } */
 
 p{
-    margin-top: 30px;
+    padding: 30px 0;
     color: var(--white);
     font-size: 14px;
     letter-spacing: 1.2px;
     font-weight: 500;
+}
+
+@media (min-width: 440px){
+    .game-container{
+        position: relative;
+        top: 60px;
+    }
 }
