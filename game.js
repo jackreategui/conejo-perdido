@@ -17,6 +17,19 @@ function startGame(){
     canvas.setAttribute('width', canvasSize);
     canvas.setAttribute('height', canvasSize);
 
+    const elementsSize = (canvasSize / 10) - 1;
+
+    game.font = elementsSize + 'px Helvetica Neue';
+    game.textAling = 'end';
+
+    for (let i = 0; i < 10; i++) {
+        game.fillText(emojis['X'], elementsSize * i, elementsSize);
+    }
+
+
+
+
+
     // window.innerHeight
     // window.innerWidth
 
