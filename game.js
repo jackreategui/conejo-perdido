@@ -27,7 +27,9 @@ function startGame(){
     game.textAling = 'end';
 
     for (let i = 0; i < 10; i++) {
-        game.fillText(emojis['X'], elementsSize * i, elementsSize);
+        for (let x = 1; x <= 10; x++) {
+            game.fillText(emojis['X'], elementsSize * i, elementsSize*x);
+        }
     }
 
 }
