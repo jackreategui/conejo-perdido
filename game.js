@@ -22,13 +22,18 @@ function setCanvasSize() {
     startGame();
 }
 
+
 function startGame(){
     game.font = elementsSize + 'px Helvetica Neue';
     game.textAling = 'end';
+    
+    const map = maps[0];
+    const mapRows = map.trim().split('\n');
+    const mapRowCol = mapRows.map(row => row.trim().split(''));
 
     for (let i = 0; i < 10; i++) {
         for (let x = 1; x <= 10; x++) {
-            game.fillText(emojis['X'], elementsSize * i, elementsSize*x);
+            game.fillText(emojis[mapRowCol[x - 1][i]], elementsSize * i, elementsSize*x);
         }
     }
 
