@@ -18,6 +18,8 @@ let giftPosition = {
     y: undefined,
 };
 
+let enemyPositions = [];
+
 window.addEventListener('load', setCanvasSize);
 window.addEventListener('resize', setCanvasSize);
 
@@ -43,7 +45,9 @@ function startGame(){
     const mapRows = map.trim().split('\n');
     const mapRowCol = mapRows.map(row => row.trim().split(''));
 
+    enemyPositions = [];
     game.clearRect(0, 0, canvasSize, canvasSize);
+
     mapRowCol.forEach((row, rowI) => {
         row.forEach((col, colI) => { 
             const emoji = emojis[col];
@@ -58,6 +62,11 @@ function startGame(){
             } else if (col == 'I') {
                 giftPosition.x = postX;
                 giftPosition.y = postY;
+            } else if (col == 'X') {
+                enemyPositions.push({
+                    x: postX,
+                    y: postY,
+                })
             }
 
             game.fillText(emoji, postX, postY);
@@ -74,6 +83,16 @@ function playerMove() {
 
     if (collition) {
         console.log('yes');
+    }
+
+    const enemyCollition = enemyPositions.find(enemy => {
+        const enemyCollitionX = enemy.x.toFixed(3) == playerPosition.x.toFixed(3);
+        const enemyCollitionY = enemy.y.toFixed(3) ==  playerPosition.y.toFixed(3);
+        return enemyCollitionX && enemyCollitionY;
+    });
+
+    if (enemyCollition) {
+        console.log('mori x.x');
     }
     
     game.fillText(emojis['PLAYER'], playerPosition.x, playerPosition.y);
