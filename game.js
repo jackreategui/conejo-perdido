@@ -7,6 +7,7 @@ const btnRight = document.querySelector('#right');
 
 let canvasSize;
 let elementsSize;
+let level = 0;
 
 const playerPosition = {
     x: undefined,
@@ -41,7 +42,13 @@ function startGame(){
     game.font = elementsSize-3 + 'px Helvetica Neue';
     game.textAling = 'end';
     
-    const map = maps[0];
+    const map = maps[level];
+
+    if (!map) {
+        gameWin();
+        return;
+    }
+
     const mapRows = map.trim().split('\n');
     const mapRowCol = mapRows.map(row => row.trim().split(''));
 
@@ -82,7 +89,7 @@ function playerMove() {
     const collition = gitftCollitionX && gitftCollitionY;
 
     if (collition) {
-        console.log('yes');
+        levelwin();
     }
 
     const enemyCollition = enemyPositions.find(enemy => {
@@ -98,6 +105,14 @@ function playerMove() {
     game.fillText(emojis['PLAYER'], playerPosition.x, playerPosition.y);
 }
 
+function levelwin() {
+    level++;
+    startGame();
+}
+
+function gameWin() {
+    console.log('terminaste!!!');
+}
 
 function moveKey(event) {
     if (event.key == 'ArrowUp') {
