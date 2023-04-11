@@ -18,18 +18,18 @@
 }
 
 body{
-    font-family:'Helvetica Neue';
+    font-family:'Roboto',sans-serif;
     background: var(--background);
     height: 100vh;
     display: grid;
-    place-content: center;
+    justify-content: center;
 }
 
 canvas{
     border: 4px solid var(--button);
     border-radius: 8px;
     background: var(--main);
-    margin: 30px auto;
+    margin: -30px auto 0;
 }
 
 .buttons{
@@ -92,17 +92,36 @@ canvas{
     margin-top: 30px;
 } */
 
+.infoGame{
+    margin: 8px 0 0 0;
+}
+
 p{
-    padding: 30px 0;
+    padding: 8px 32px;
+    margin: 0;
     color: var(--white);
     font-size: 20px;
     letter-spacing: 2px;
     font-weight: 500;
+    line-height: normal;
 }
 
-@media (min-width: 440px){
+span{
+    font-size: 30px;
+    transition: 0.3s ease;
+}
+
+#lives{
+    color: rgb(255, 29, 29);
+}
+
+@media (min-width: 800px){
     .game-container{
         position: relative;
         top: 60px;
+    }
+
+    .buttons{
+        display: none;
     }
 }
