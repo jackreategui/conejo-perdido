@@ -8,6 +8,7 @@ const btnRight = document.querySelector('#right');
 let canvasSize;
 let elementsSize;
 let level = 0;
+let lives = 3;
 
 const playerPosition = {
     x: undefined,
@@ -99,7 +100,7 @@ function playerMove() {
     });
 
     if (enemyCollition) {
-        console.log('mori x.x');
+        levelFail();
     }
     
     game.fillText(emojis['PLAYER'], playerPosition.x, playerPosition.y);
@@ -112,6 +113,19 @@ function levelwin() {
 
 function gameWin() {
     console.log('terminaste!!!');
+}
+
+function levelFail() {
+    lives--;
+
+    if (lives <= 0) {
+        level = 0;
+        lives = 3;
+    }
+
+    playerPosition.x = undefined;
+    playerPosition.y = undefined;
+    startGame();
 }
 
 function moveKey(event) {
