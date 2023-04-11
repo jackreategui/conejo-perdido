@@ -5,6 +5,7 @@ const btnDown = document.querySelector('#down');
 const btnLeft = document.querySelector('#left');
 const btnRight = document.querySelector('#right');
 const spanLives = document.querySelector('#lives');
+const spanTime = document.querySelector('#time');
 
 let canvasSize;
 let elementsSize;
