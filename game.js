@@ -125,6 +125,7 @@ function levelwin() {
 
 function gameWin() {
     clearInterval(timeInterval);
+    console.log('termino');
 }
 
 function levelFail() {
