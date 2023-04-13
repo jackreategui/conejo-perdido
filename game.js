@@ -6,6 +6,8 @@ const btnLeft = document.querySelector('#left');
 const btnRight = document.querySelector('#right');
 const spanLives = document.querySelector('#lives');
 const spanTime = document.querySelector('#time');
+const record = document.querySelector('#record');
+const mensaje = document.querySelector('#mensaje');
 
 let canvasSize;
 let elementsSize;
@@ -59,6 +61,7 @@ function startGame(){
     if (!timeStart) {
         timeStart = Date.now();
         timeInterval = setInterval(timeShow, 100);
+        showRecord();
     }
 
     const mapRows = map.trim().split('\n');
@@ -126,6 +129,21 @@ function levelwin() {
 function gameWin() {
     clearInterval(timeInterval);
     console.log('termino');
+
+    const recordTime = localStorage.getItem('record_time');
+    const playerTime = Date.now() - timeStart;
+
+    if (recordTime) {
+        if (recordTime >= playerTime) {
+            localStorage.setItem('record_time', playerTime);
+            mensaje.innerHTML = ('Superaste el redord 😀');
+        } else {
+            mensaje.innerHTML = ('No superaste el redord 🥹');
+        }
+    } else {
+        localStorage.setItem('record_time', playerTime);
+        mensaje.innerHTML = ('Fue tu primera vez 😅 jugando, vuelve a jugar para superar tu redord');
+    }
 }
 
 function levelFail() {
@@ -161,6 +179,10 @@ function formatTime(ms){
 
 function timeShow() {
     spanTime.innerHTML = formatTime(Date.now()-timeStart);
+}
+
+function showRecord() {
+    record.innerHTML = localStorage.getItem('record_time');
 }
 
 function moveKey(event) {
