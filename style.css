@@ -124,4 +124,14 @@ span{
     .buttons{
         display: none;
     }
+
+}
+
+@media (max-width: 800px){
+    canvas{
+        border: 4px solid var(--button);
+        border-radius: 8px;
+        background: var(--main);
+        margin: 30px auto 8px;
+    }
 }
