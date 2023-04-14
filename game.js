@@ -40,6 +40,8 @@ function setCanvasSize() {
         canvasSize = window.innerHeight * 0.8;
     }
 
+    canvasSize = Number(canvasSize.toFixed(0));
+
     canvas.setAttribute('width', canvasSize);
     canvas.setAttribute('height', canvasSize);
 
