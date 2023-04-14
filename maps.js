@@ -12,6 +12,7 @@ const emojis = {
 
 const maps = [];
 
+// level 1
 maps.push(`
     IXXXXXXXXX
     -XXXXXXXXX
@@ -25,6 +26,7 @@ maps.push(`
     OXXXXXXXXX
 `);
 
+// level 2
 maps.push(`
     O--XXXXXXX
     X--XXXXXXX
@@ -38,6 +40,7 @@ maps.push(`
     XXXXXXXXXX
 `);
 
+// level 3
 maps.push(`
     I-----XXXX
     XXXXX-XXXX
@@ -51,6 +54,7 @@ maps.push(`
     XXXXXXXXXX
 `);
 
+// level 4
 maps.push(`
     I-----XXXX
     XXXXX-XXXX
@@ -64,6 +68,7 @@ maps.push(`
     XXXXXXXXXX
 `);
 
+// level 5
 maps.push(`
     XXXXX---XI
     XXXXX-XXX-
@@ -77,6 +82,7 @@ maps.push(`
     XXXXOXXXXX
 `);
 
+// level 6
 maps.push(`
     XXXX----XI
     -----XX---
@@ -90,6 +96,7 @@ maps.push(`
     XXXXXXXXXO
 `);
 
+// level 7
 maps.push(`
     XXXX----XO
     -----XX---
