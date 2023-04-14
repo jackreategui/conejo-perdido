@@ -92,8 +92,8 @@ maps.push(`
     XX--X--XXX
     X----XXXXX
     X-XX-XXX-X
-    XX--------
-    XXXXXXXXXO
+    XX-------X
+    XXXXXXXXOX
 `);
 
 // level 7
