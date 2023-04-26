@@ -1,5 +1,5 @@
 #Laberinto de bombas
-![](https://i.ibb.co/XjNxDpF/image.png)
+![](https://i.ibb.co/5WwRLBy/image.png)
 
 Este juego fue creado con la ayuda de las clases de Platzi.
 
